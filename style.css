@@ -20,3 +20,26 @@ button{
 button:hover{
     background-color: darkgreen;
 }
+#msg{
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    padding: 20px;
+    border-radius: 12px;
+    width: fit-content;
+    margin: 40px auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from{
+        box-shadow: 0 0 10px #ff4e50;
+    }
+    to{
+        box-shadow: 0 0 25px #f9d423;
+    }
+}
