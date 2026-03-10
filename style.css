@@ -21,25 +21,40 @@ button:hover{
     background-color: darkgreen;
 }
 #msg{
-    font-size: 26px;
+    font-size: 32px;
     font-weight: bold;
     text-align: center;
+    padding: 20px 40px;
+    border-radius: 15px;
+    background: linear-gradient(270deg,#ff4e50,#f9d423,#ff6a00,#ff4e50);
+    background-size: 600% 600%;
     color: white;
-    background: linear-gradient(45deg, #ff4e50, #f9d423);
-    padding: 20px;
-    border-radius: 12px;
     width: fit-content;
-    margin: 40px auto;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    letter-spacing: 1px;
-    animation: glow 2s infinite alternate;
+    margin: 50px auto;
+    letter-spacing: 2px;
+
+    animation: gradientMove 6s ease infinite,
+               floatText 3s ease-in-out infinite,
+               glowText 2s alternate infinite;
 }
 
-@keyframes glow {
+@keyframes gradientMove {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes floatText {
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
+}
+
+@keyframes glowText {
     from{
-        box-shadow: 0 0 10px #ff4e50;
+        box-shadow:0 0 10px #ff4e50, 0 0 20px #ff6a00;
     }
     to{
-        box-shadow: 0 0 25px #f9d423;
+        box-shadow:0 0 20px #f9d423, 0 0 40px #ff4e50;
     }
 }
